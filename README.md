@@ -70,22 +70,7 @@ Without Twitch credentials, the application stays in demo mode; all demo actors 
 5. Keep the OBS preview open. Show the boss phases, health, score, participants, clearly labeled `DEMO` activity, reward, and saved lore/history arriving over the shared WebSocket.
 6. Restart the local app and reload the dashboard to confirm that the result was saved to disk. **Reset scenario** clears the current battle state; it does not erase history or grant rewards.
 
-### Official video plan (2:45 target)
-
-The hackathon video must show the real project working on Twitch and how it was built with Codex. Use a real Twitch encounter for the main story; keep the simulated replay as a labeled backup shot. See the [final hackathon rules](https://twitchcon-codex.devpost.com/rules) before recording and publishing.
-
-- **0:00–0:12** — Hook: “Your chat's running joke becomes tonight's boss and tomorrow's community lore.” Show the dashboard's live subscription status.
-- **0:12–0:32** — Capture real channel chat repeating the same joke and the Twitch-sourced proposal with its evidence count and time window.
-- **0:32–0:48** — Approve the proposal; show that it becomes prepared and still requires the streamer to start it.
-- **0:48–1:00** — Start the encounter and bring the OBS overlay beside the dashboard.
-- **1:00–1:43** — Show real `!join` and `!attack` messages change participants, HP, activity, and boss phases in both views. Use several viewers to reach the phase thresholds; preserve the `TWITCH` activity labels.
-- **1:43–2:00** — Show victory, the unique reward, and the lore/history entry. If you claim restart persistence, show the backend restart before the entry reappears.
-- **2:00–2:28** — Show the actual Codex thread/code/test workflow that built and checked the integration. Do not stage fake terminal output or expose credentials.
-- **2:28–2:45** — Close with the difference from a generic chat game: the running joke shapes the encounter and is kept as community history.
-
-Record only your own channel and project. Avoid third-party creator footage, unrelated logos/art, and copyrighted music. Keep chat messages legible and crop unnecessary platform chrome; use original narration or no music.
-
-Use an actual screen recording of the running app. Do not describe simulated messages as real Twitch chat.
+ 
 
 ## Viewer commands
 
@@ -108,14 +93,7 @@ npm start         # start compiled production app (set NODE_ENV=production to se
 
 Development uses the Vite proxy for `/api`, `/auth`, and `/socket`. Production builds the frontend into `dist/`; Express serves those assets and the SPA routes alongside the API and WebSocket.
 
-## Screenshots to capture
-
-The repository does not include product screenshots yet. Before submitting, capture real screenshots from the running app and add them under `docs/screenshots/`:
-
-- `dashboard-proposal.png` — repeated phrase, evidence window, and streamer approval controls.
-- `live-encounter.png` — boss phase, health, chat activity, and participant stats.
-- `obs-overlay.png` — the compact overlay at a typical 1280 × 720 browser-source size.
-- `community-memory.png` — a completed encounter with its reward and saved history entry.
+ 
 
 ## Configuration
 
@@ -228,12 +206,4 @@ No runtime AI provider is configured in this build. Encounter proposals use a bo
 
 Codex was used to trace the OAuth callback and EventSub path through Express, Vite, the encounter engine, the dashboard, and the OBS overlay; diagnose and correct the authorization-start URL; add safe diagnostics and lifecycle tests; and fix terminal outcome persistence and duplicate reward protection. Codex also helped refine the evidence-backed proposal, phase UI, and repeatable demo flow. The streamer remains responsible for approving an encounter and starting the fight. Before submission, show the real Codex thread and the actual test/build output in the video; do not use fabricated output.
 
-## Hackathon submission checklist
-
-- Confirm the project meets the official creation-period and eligibility rules before submitting.
-- Repository: provide a GitHub, GitLab, or Bitbucket URL containing the source, setup instructions, and required assets. A private GitHub/GitLab repository must be shared with the judge addresses listed in the [official rules](https://twitchcon-codex.devpost.com/rules).
-- Description: explain the community-joke-to-lore loop, why it differs from a generic chat game, and how Codex contributed.
-- Video: record a cut under three minutes, upload it to YouTube, and make it publicly accessible (unlisted is allowed). It must show the real project working on Twitch and how it was built with Codex. Avoid unlicensed third-party marks and copyrighted material.
-- Codex session ID: in the Codex thread where most of the project was built, run `/status` and copy the session ID into the submission. The ID is not available from the repository.
-- Final QA: run `npm test`, `npm run build`, and the manual Twitch checklist. Only describe checks that actually completed.
-- Submit: click **Submit** on Devpost and verify the project is marked **Submitted**, not only saved as a draft.
+ 
